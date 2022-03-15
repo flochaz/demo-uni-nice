@@ -17,6 +17,10 @@
           "deploymentBucketName": "amplify-satisfaction-dev-142926-deployment",
           "s3Key": "amplify-builds/satisfaction3b81fd08-5a65526c425348634774-build.zip"
         }
+      },
+      "auth": {
+        "satisfactiona90ead1b": {},
+        "true": {}
       }
     }
   }

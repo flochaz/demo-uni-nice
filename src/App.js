@@ -4,8 +4,10 @@ import * as React from 'react';
 import { Button, Rating, TextField, Box } from '@mui/material';
 import Amplify, { API } from 'aws-amplify';
 import awsconfig from './aws-exports';
+import Predictions, { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
 
 Amplify.configure(awsconfig);
+Amplify.addPluggable(new AmazonAIPredictionsProvider());
 
 function App() {
   const [rating, setRating] = React.useState(0);
@@ -13,6 +15,17 @@ function App() {
   const [comment, setComment] = React.useState('');
 
   const handleClick = async () => {
+    Predictions.interpret({
+      text: {
+        source: {
+          text: comment,
+          language: 'fr',
+        },
+        type: "ALL"
+      }
+    })
+    .then(result => console.log({ result }))
+    .catch(err => console.log({ err }));
     await API.post('satisfactionapi', '/satisfactions', {
       body: {
         rating,
