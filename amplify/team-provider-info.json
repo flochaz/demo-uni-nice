@@ -10,6 +10,14 @@
       "StackName": "amplify-satisfaction-dev-142926",
       "StackId": "arn:aws:cloudformation:eu-west-1:670535138659:stack/amplify-satisfaction-dev-142926/f191e230-a463-11ec-b1e9-066dc95b2da1",
       "AmplifyAppId": "d196d4sdo7wthc"
+    },
+    "categories": {
+      "function": {
+        "satisfaction3b81fd08": {
+          "deploymentBucketName": "amplify-satisfaction-dev-142926-deployment",
+          "s3Key": "amplify-builds/satisfaction3b81fd08-5a65526c425348634774-build.zip"
+        }
+      }
     }
   }
 }

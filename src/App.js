@@ -2,16 +2,25 @@ import logo from './logo.svg';
 import './App.css';
 import * as React from 'react';
 import { Button, Rating, TextField, Box } from '@mui/material';
+import Amplify, { API } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
 
 function App() {
   const [rating, setRating] = React.useState(0);
   const [pseudo, setPseudo] = React.useState('');
   const [comment, setComment] = React.useState('');
 
-  const handleClick = () => {
-    console.log(`${pseudo} a noté ${rating}/5`);
+  const handleClick = async () => {
+    await API.post('satisfactionapi', '/satisfactions', {
+      body: {
+        rating,
+        pseudo,
+        comment,
+      },
+    });
   };
-
 
   return (
     <div className="App">
@@ -23,7 +32,7 @@ function App() {
             variant="standard"
             onChange={(event) => setPseudo(event.target.value)}
           />
-      
+
           <TextField
             id="standard-basic"
             label="Un commentaire ?"

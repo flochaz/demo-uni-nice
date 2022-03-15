@@ -1,0 +1,10 @@
+{
+  "resourceName": "satisfactions",
+  "tableName": "satisfactions",
+  "partitionKey": {
+    "fieldName": "pseudo",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

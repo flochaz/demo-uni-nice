@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/satisfactions": {
+      "name": "/satisfactions",
+      "lambdaFunction": "satisfaction3b81fd08",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
